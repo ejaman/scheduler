@@ -1,0 +1,63 @@
+.container {
+  background-color: #e9ecef;
+
+  border-radius: 10px;
+  width: 20em;
+  height: 20em;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4em;
+}
+.idLog {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.id,
+.pw {
+  width: 90%;
+  border-radius: 10px;
+  border: thin;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  font-family: "DungGeunMo";
+}
+.socialLog {
+  border-top: #ced4da 1px solid;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.logBtn,
+.googleBtn,
+.gitBtn {
+  background-color: white;
+  border: thin;
+  border-radius: 10px;
+  width: 90%;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.4rem;
+  margin: 0.1rem;
+  margin-left: 1rem;
+  font-family: "DungGeunMo";
+}
+.logBtn:hover,
+.googleBtn:hover,
+.gitBtn:hover {
+  opacity: 0.8;
+}
+.link {
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+.link:visited,
+.link:hover {
+  color: black;
+  text-decoration: underline;
+}

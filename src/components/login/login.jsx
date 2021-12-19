@@ -5,18 +5,18 @@ import styles from "./login.module.css";
 const Login = ({ authService }) => {
   const navigate = useNavigate();
 
-  const goSchedule = (userId) => {
-    navigate("/scheduler", { state: { id: userId } });
+  const goDiary = (userId) => {
+    navigate("/diary", { state: { id: userId } });
   };
   const onLogin = (event) => {
     authService //
       .login(event.currentTarget.textContent)
-      .then((data) => goSchedule(data.user.uid));
+      .then((data) => goDiary(data.user.uid));
   };
   useEffect(() => {
     // user가 있다면 바로 로그인 건너뛰고 card로
     authService.onAuthChange((user) => {
-      user && goSchedule(user.id);
+      user && goDiary(user.id);
     });
   });
 

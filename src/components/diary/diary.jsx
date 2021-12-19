@@ -1,4 +1,4 @@
-import styles from "./Diary.module.css";
+import styles from "./diary.module.css";
 import React from "react";
 
 const Diary = (props) => <h1>Diary</h1>;

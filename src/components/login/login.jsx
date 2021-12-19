@@ -5,24 +5,23 @@ import styles from "./login.module.css";
 const Login = ({ authService }) => {
   const navigate = useNavigate();
 
-  const goScheduler = (userId) => {
+  const goSchedule = (userId) => {
     navigate("/scheduler", { state: { id: userId } });
   };
-
-  const onLogin = (e) => {
+  const onLogin = (event) => {
     authService //
-      .login(e.currentTarget.textContent)
-      .then((data) => goScheduler(data.user.uid));
+      .login(event.currentTarget.textContent)
+      .then((data) => goSchedule(data.user.uid));
   };
-
   useEffect(() => {
+    // user가 있다면 바로 로그인 건너뛰고 card로
     authService.onAuthChange((user) => {
-      user && goScheduler(user.id);
+      user && goSchedule(user.id);
     });
   });
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <h1 className={styles.title}>Scheduler</h1>
 
       <div className={styles.idLog}>
@@ -31,16 +30,16 @@ const Login = ({ authService }) => {
         <button className={styles.logBtn}>Login</button>
       </div>
 
-      <div className={styles.socialLog} onClick={onLogin}>
+      <div className={styles.socialLog}>
         <p className={styles.ment}>or login with</p>
-        <button className={styles.googleBtn}>
+        <button className={styles.googleBtn} onClick={onLogin}>
           <i className="fab fa-google"></i>Google
         </button>
         <button className={styles.gitBtn} onClick={onLogin}>
           <i className="fab fa-github"></i>Github
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./header.module.css";
-import Login from "../login/login";
 
 const Header = (props) => {
   return (

@@ -1,0 +1,27 @@
+.container {
+  background-color: aquamarine;
+  width: 100%;
+  padding: 0.5em;
+  position: relative;
+}
+.title {
+  font-size: 2.5em;
+  margin: 0.5em 0.3em;
+  display: inline-block;
+}
+.loginBtn {
+  position: absolute;
+  right: 2em;
+  top: 1em;
+  width: 5em;
+  cursor: pointer;
+  background-color: white;
+  border: black 3px solid;
+  border-radius: 10px;
+  font-size: 1.5em;
+  font-weight: 900;
+  font-family: "DungGeunMo";
+}
+.loginBtn:hover {
+  background-color: #e9ecef;
+}

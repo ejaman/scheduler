@@ -5,7 +5,9 @@ const Header = (props) => {
   return (
     <header className={styles.container}>
       <h1 className={styles.title}>2022 JScheduler </h1>
-      <button className={styles.loginBtn}>Logout</button>
+      <button className={styles.loginBtn} onClick={props.onLogout}>
+        Logout
+      </button>
     </header>
   );
 };

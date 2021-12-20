@@ -8,6 +8,10 @@ const Login = ({ authService }) => {
   const goDiary = (userId) => {
     navigate("/diary", { state: { id: userId } });
   };
+
+  // const goCalendar = (userId) => {
+  //   navigate("/calendar", { state: { id: userId } });
+  // };
   const onLogin = (event) => {
     authService //
       .login(event.currentTarget.textContent)

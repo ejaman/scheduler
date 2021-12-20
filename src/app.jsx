@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styles from "./app.module.css";
-import Diary from "./components/diary/diary";
 import Login from "./components/login/login";
+import Diary from "./components/Diaries/diary/diary";
+import Calendar from "./components/calendar/calendar";
 import Schedule from "./components/schedule/schedule";
 
 function App({ authService }) {
@@ -12,7 +13,8 @@ function App({ authService }) {
           <Route path="/" exact element={<Login authService={authService} />} />
           <Route path="/login" element={<Login authService={authService} />} />
           <Route path="/scheduler" element={<Schedule />} />
-          <Route path="/diary" element={<Diary />} />
+          <Route path="/calendar" element={<Calendar />} />
+          <Route path="/diary" element={<Diary authService={authService} />} />
         </Routes>
       </BrowserRouter>
     </div>

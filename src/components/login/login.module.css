@@ -1,3 +1,5 @@
+@value makerLightRed, makerWhite from '../../common/colors.css';
+
 .container {
   /* background-color: #DF8080; */
   background-color: rgba(0, 0, 0, 0.1);
@@ -9,6 +11,7 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
+  margin-top: 5em;
   font-size: 1.4em;
 }
 .title {
@@ -38,8 +41,8 @@
 .googleBtn,
 .gitBtn {
   padding: 0.5em;
-  background-color: #2b6a4d;
-  color: #dcdfe5;
+  background-color: #888888;
+  color: makerWhite;
   border: thin;
   border-radius: 5px;
   width: 90%;
@@ -55,7 +58,7 @@
   margin: 0.1em;
   margin-bottom: 3em;
   background-color: white;
-  color: #2b6a4d;
+  color: #888888;
 
   width: 45%;
 }

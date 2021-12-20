@@ -1,0 +1,27 @@
+@value makerWhite from '../../../common/colors.css';
+
+.added {
+  background-color: makerWhite;
+  flex-basis: 36%;
+}
+
+.feeds {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0em 2em;
+  overflow: hidden;
+  height: 150vh;
+}
+.feeds:hover {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 62rem) {
+  .added {
+    margin-top: 5em;
+    width: 90%;
+  }
+}

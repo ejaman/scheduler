@@ -1,0 +1,30 @@
+.form {
+  background-color: #eee9e5;
+  flex-basis: 50%;
+
+  align-items: center;
+  margin: 0 5em 0 4em;
+  padding: 0 1em;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.input,
+.content {
+  width: 80%;
+  border: 0;
+  font-size: 1.2em;
+  padding: 0.7em;
+  font-family: "DungGeunMo";
+  outline: 0;
+}
+.input {
+  margin-top: 1em;
+}
+.content {
+  height: 20em;
+  font-size: 1.1em;
+}

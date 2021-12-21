@@ -8,7 +8,7 @@ const Feed = ({ feed, onDelete, onUpdate }) => {
   const url = imgURL || DEFAULT_IMAGE;
 
   const onChange = (event) => {
-    console.log(event.currentTarget.value);
+    console.log(feed);
     if (event.currentTarget == null) {
       return;
     }
@@ -39,7 +39,7 @@ const Feed = ({ feed, onDelete, onUpdate }) => {
         ></input>
         <textarea
           className={styles.content}
-          name="message"
+          name="content"
           value={content}
           onChange={onChange}
         ></textarea>

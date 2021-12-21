@@ -12,7 +12,7 @@ const Diary = ({ authService }) => {
       date: "2021.12.20",
       title: "first diary",
       content:
-        "BlaBlaBla BlaBlaBlaBlaBla BlaBlaBla BlaBlaBla vBlaBla BlaBlaBla BlaBla Bla BlaBlaBlaBlaBlaBlaBla BlaBlaBlaBlaBla BlaBlaBla BlaBlaBla vBlaBla BlaBlaBla BlaBla Bla BlaBlaBlaBlaBlaBlaBla BlaBlaBlaBlaBla BlaBlaBla BlaBlaBla vBlaBla BlaBlaBla BlaBla Bla BlaBlaBlaBlaBlaBlaBla BlaBlaBlaBlaBla BlaBlaBla BlaBlaBla vBlaBla BlaBlaBla BlaBla Bla BlaBlaBlaBlaBlaBlaBla BlaBlaBlaBlaBla BlaBlaBla BlaBlaBla vBlaBla BlaBlaBla BlaBla Bla BlaBlaBlaBlaBlaBlaBla BlaBlaBlaBlaBlaBlaBla BlaBlaBlaBlaBla BlaBlaBla BlaBlaBla vBlaBla BlaBlaBla BlaBla Bla BlaBlaBlaBlaBlaBlaBla BlaBlaBlaBlaBla BlaBlaBla BlaBlaBla vBlaBla BlaBlaBla BlaBla Bla BlaBlaBlaBlaBlaBlaBla BlaBlaBlaBlaBla BlaBlaBla BlaBlaBla vBlaBla BlaBlaBla BlaBla Bla BlaBlaBlaBlaBlaBlaBla BlaBlaBlaBlaBla BlaBlaBla BlaBlaBla vBlaBla BlaBlaBla BlaBla Bla BlaBlaBlaBlaBlaBlaBla BlaBlaBlaBlaBla BlaBlaBla BlaBlaBla vBlaBla BlaBlaBla BlaBla Bla BlaBlaBlaBla",
+        "BlaBlaBl laBlaBla BlaBla BlaBla BlaBlaBla BlaBla Bla BlaBlaBlaBla",
       file: "files",
       imgURL: null,
     },
@@ -39,7 +39,7 @@ const Diary = ({ authService }) => {
     });
   });
 
-  const addFeed = (feed) => {
+  const addAndUpdateFeed = (feed) => {
     setDiaries((diaries) => {
       const updated = { ...diaries };
       updated[feed.id] = feed;
@@ -58,8 +58,12 @@ const Diary = ({ authService }) => {
     <section className={styles.diary}>
       <Header onLogout={onLogout} />
       <div className={styles.container}>
-        <AddDiary diaries={diaries} onAdd={addFeed} />
-        <AddedDiary diaries={diaries} onDelete={deleteFeed} />
+        <AddDiary diaries={diaries} onAdd={addAndUpdateFeed} />
+        <AddedDiary
+          diaries={diaries}
+          onDelete={deleteFeed}
+          onUpdate={addAndUpdateFeed}
+        />
       </div>
     </section>
   );

@@ -1,0 +1,11 @@
+@value makerWhite,makerWhiter,makerLightGreen,makerGreen,makerBeige,makerLightBeige,makerLightRed,makerRed from '../../../common/colors.css';
+
+.form {
+  background-color: makerLightGreen;
+  border-radius: 5px;
+  width: 25%;
+  height: 15em;
+  margin: 1em;
+  padding: 0.3em 0.7em;
+  font-size: 1.5em;
+}

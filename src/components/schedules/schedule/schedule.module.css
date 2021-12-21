@@ -1,0 +1,6 @@
+@value makerWhite from '../../../common/colors.css';
+
+.container {
+  width: 100%;
+  background-color: makerWhite;
+}

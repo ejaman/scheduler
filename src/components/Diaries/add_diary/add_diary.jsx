@@ -6,11 +6,17 @@ const AddDiary = ({ onAdd }) => {
   const titleRef = useRef();
   const contentRef = useRef();
 
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth();
+  const date = now.getDate();
+  const today = `${year}.${month}.${date}`;
+
   const onSubmit = (event) => {
     event.preventDefault();
     const feed = {
       id: Date.now(), //uuid
-      date: Date(),
+      date: today,
       title: titleRef.current.value || "",
       content: contentRef.current.value || "",
       file: "",
@@ -25,8 +31,7 @@ const AddDiary = ({ onAdd }) => {
     <form ref={formRef} className={styles.form}>
       <img className={styles.img} src="/images/pix3.png"></img>
       <div className={styles.container}>
-        {/* date는 input이 아니라 자동으로 */}
-        <p className={styles.date}>{Date()}</p>
+        <p className={styles.date}>{today}</p>
         <input
           ref={titleRef}
           className={styles.input}
@@ -41,8 +46,10 @@ const AddDiary = ({ onAdd }) => {
           placeholder="content"
         ></textarea>
       </div>
-      <button>img</button>
-      <button onClick={onSubmit}>save</button>
+      <button className={styles.imgBtn}>img</button>
+      <button className={styles.saveBtn} onClick={onSubmit}>
+        save
+      </button>
     </form>
   );
 };

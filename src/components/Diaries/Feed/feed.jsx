@@ -1,10 +1,23 @@
 import React from "react";
+import { useNavigate } from "react-router";
 import styles from "./feed.module.css";
 
 const DEFAULT_IMAGE = "/images/img1.png";
-const Feed = ({ feed, onDelete }) => {
+const Feed = ({ feed, onDelete, onUpdate }) => {
   const { date, title, content, file, imgURL } = feed;
   const url = imgURL || DEFAULT_IMAGE;
+
+  const onChange = (event) => {
+    console.log(event.currentTarget.value);
+    if (event.currentTarget == null) {
+      return;
+    }
+    event.preventDefault();
+    onUpdate({
+      ...feed,
+      [event.currentTarget.name]: event.currentTarget.value,
+    });
+  };
 
   const onSubmit = () => {
     onDelete(feed);
@@ -22,13 +35,14 @@ const Feed = ({ feed, onDelete }) => {
           type="text"
           name="title"
           value={title}
+          onChange={onChange}
         ></input>
         <textarea
           className={styles.content}
           name="message"
           value={content}
+          onChange={onChange}
         ></textarea>
-        <button className={styles.todoBtn}>check To do list</button>
       </div>
     </div>
   );

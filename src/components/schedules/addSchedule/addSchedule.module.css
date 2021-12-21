@@ -1,0 +1,5 @@
+@value makerWhite,makerWhiter,makerLightGreen,makerGreen,makerBeige,makerLightBeige,makerLightRed,makerRed from '../../../common/colors.css';
+
+.add {
+  background-color: makerBeige;
+}

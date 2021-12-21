@@ -1,12 +1,12 @@
 .form {
   background-color: #eee9e5;
   flex-basis: 50%;
-
-  align-items: center;
   margin: 0 5em 0 4em;
-  padding: 0 1em;
+  padding: 0 1em 1em 1em;
 }
-
+.date {
+  font-size: 1.3em;
+}
 .container {
   align-items: center;
   display: flex;
@@ -27,4 +27,16 @@
 .content {
   height: 20em;
   font-size: 1.1em;
+}
+.imgBtn,
+.saveBtn {
+  width: 40%;
+  border: none;
+  padding: 0.5em;
+  font-size: 1em;
+  background: #dad5d1;
+}
+.imgBtn:hover,
+.saveBtn:hover {
+  opacity: 0.7;
 }

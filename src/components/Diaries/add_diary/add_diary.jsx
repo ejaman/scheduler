@@ -1,16 +1,24 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./add_diary.module.css";
 
-const AddDiary = ({ onAdd }) => {
+const AddDiary = ({ onAdd, FileInput }) => {
   const formRef = useRef();
   const titleRef = useRef();
   const contentRef = useRef();
+  const [file, setFile] = useState({ file: null, imgURL: null });
 
   const now = new Date();
   const year = now.getFullYear();
   const month = now.getMonth();
   const date = now.getDate();
   const today = `${year}.${month}.${date}`;
+
+  const onFileChange = (file) => {
+    setFile({
+      file: file.name,
+      imgURL: file.url,
+    });
+  };
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -19,17 +27,18 @@ const AddDiary = ({ onAdd }) => {
       date: today,
       title: titleRef.current.value || "",
       content: contentRef.current.value || "",
-      file: "",
-      imgURL: "",
+      file: file.file || "",
+      imgURL: file.imgURL || "",
     };
-    console.log(feed);
     formRef.current.reset(); // 사용자가 입력해서 제출하고 나면 폼이 리셋되도록
     onAdd(feed);
   };
+  const DEFAULT_IMAGE = "/images/pix1.png";
+  const url = file.imgURL || DEFAULT_IMAGE;
 
   return (
     <form ref={formRef} className={styles.form}>
-      <img className={styles.img} src="/images/pix3.png"></img>
+      <img className={styles.img} src={url}></img>
       <div className={styles.container}>
         <p className={styles.date}>{today}</p>
         <input
@@ -37,16 +46,17 @@ const AddDiary = ({ onAdd }) => {
           className={styles.input}
           type="text"
           name="title"
-          placeholder="title"
+          placeholder="Title"
         ></input>
         <textarea
           ref={contentRef}
           className={styles.content}
           name="content"
-          placeholder="content"
+          placeholder="Content"
         ></textarea>
       </div>
-      <button className={styles.imgBtn}>img</button>
+      <FileInput name={file.file} onFileChange={onFileChange} />
+      {/* <button className={styles.imgBtn}>img</button> */}
       <button className={styles.saveBtn} onClick={onSubmit}>
         save
       </button>

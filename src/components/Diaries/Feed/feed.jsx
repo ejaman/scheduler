@@ -4,7 +4,7 @@ import styles from "./feed.module.css";
 
 const DEFAULT_IMAGE = "/images/img1.png";
 const Feed = ({ feed, onDelete, onUpdate }) => {
-  const { date, title, content, file, imgURL } = feed;
+  const { date, title, content, imgURL } = feed;
   const url = imgURL || DEFAULT_IMAGE;
 
   const onChange = (event) => {

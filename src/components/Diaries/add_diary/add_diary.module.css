@@ -4,6 +4,11 @@
   margin: 0 5em 0 4em;
   padding: 0 1em 1em 1em;
 }
+.img {
+  padding-top: 2.5em;
+  width: 80%;
+  height: 45%;
+}
 .date {
   font-size: 1.3em;
 }
@@ -18,7 +23,7 @@
   border: 0;
   font-size: 1.2em;
   padding: 0.7em;
-  font-family: "DungGeunMo";
+  font-family: "GowunBatang-Regular";
   outline: 0;
 }
 .input {

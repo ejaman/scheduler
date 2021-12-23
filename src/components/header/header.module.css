@@ -1,4 +1,4 @@
-@value makerLightBeige, makerWhite from '../../common/colors.css';
+@value makerLightGreen, makerBeige,makerWhite from '../../common/colors.css';
 
 .container {
   width: 100%;
@@ -10,6 +10,8 @@
   font-size: 2.5em;
   margin: 0.5em 0.3em;
   display: inline-block;
+  font-family: "MaruBuri-Regular";
+  color: #a4a19f;
 }
 .loginBtn {
   position: absolute;

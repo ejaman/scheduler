@@ -5,7 +5,7 @@ import AddDiary from "../add_diary/add_diary";
 import AddedDiary from "../added_diary/added_diary";
 import { useNavigate } from "react-router";
 
-const Diary = ({ authService }) => {
+const Diary = ({ authService, FileInput }) => {
   const [diaries, setDiaries] = useState({
     1: {
       id: 1,
@@ -58,7 +58,11 @@ const Diary = ({ authService }) => {
     <section className={styles.diary}>
       <Header onLogout={onLogout} />
       <div className={styles.container}>
-        <AddDiary diaries={diaries} onAdd={addAndUpdateFeed} />
+        <AddDiary
+          diaries={diaries}
+          onAdd={addAndUpdateFeed}
+          FileInput={FileInput}
+        />
         <AddedDiary
           diaries={diaries}
           onDelete={deleteFeed}

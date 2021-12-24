@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 import styles from "./feed.module.css";
 
-const DEFAULT_IMAGE = "/images/img1.png";
+const DEFAULT_IMAGE = "/images/snow.jpeg";
 const Feed = ({ feed, onDelete, onUpdate }) => {
   const { date, title, content, imgURL } = feed;
   const url = imgURL || DEFAULT_IMAGE;

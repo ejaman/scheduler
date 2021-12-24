@@ -12,7 +12,7 @@ const Diary = ({ authService, FileInput }) => {
       date: "2021.12.20",
       title: "first diary",
       content:
-        "BlaBlaBl laBlaBla BlaBla BlaBla BlaBlaBla BlaBla Bla BlaBlaBlaBla",
+        "diary 1. 달별로 일기를 볼 수 있도록 만들기 2. 날짜로 포커스가 이동하는 기능? 3. 다크모드 라이트모드? ",
       file: "files",
       imgURL: null,
     },
@@ -21,7 +21,7 @@ const Diary = ({ authService, FileInput }) => {
       date: "2021.12.20",
       title: "2end diary",
       content:
-        "블라블라 블라블라블라블라블라 블라블라 블라블라블라 블라블라블라 블라블라블라블라 블라블라블라블라 블라블라블라 블라블라 블라블라 블라블라 블라블라",
+        "calendar 1. 이번 달 달력 가져오기 2. 전체 달력 가져오기 3. 날짜 혹은 달을 클릭하면 다이어리의 해당 달로 이동 가능?",
       file: "files",
       imgURL: null,
     },

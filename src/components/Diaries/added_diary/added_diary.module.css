@@ -1,7 +1,6 @@
-@value makerWhite from '../../../common/colors.css';
-
+@value makerBeige from '../../../common/colors.css';
 .added {
-  background-color: makerWhite;
+  background-color: makerBeige;
   flex-basis: 36%;
 }
 

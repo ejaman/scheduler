@@ -1,4 +1,4 @@
-@value makerWhiter, makerWhite from '../../../common/colors.css';
+@value makerBlueGrey,makerWhite,makerBeige from '../../../common/colors.css';
 .feed {
   background-color: white;
   box-shadow: 5px 3px 17px 4px rgba(0, 0, 0, 0.61);

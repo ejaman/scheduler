@@ -2,8 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styles from "./app.module.css";
 import Login from "./components/login/login";
 import Diary from "./components/diaries/diary/diary";
-// import Calendar from "./components/calendar/calendar";
-import Schedule from "./components/schedules/schedule/schedule";
+import Calendars from "./components/calendar/calendars/calendars";
 
 function App({ authService, FileInput }) {
   return (
@@ -17,7 +16,10 @@ function App({ authService, FileInput }) {
             path="/diary"
             element={<Diary authService={authService} FileInput={FileInput} />}
           />
-          <Route path="/scheduler" element={<Schedule />} />
+          <Route
+            path="/calendar"
+            element={<Calendars authService={authService} />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

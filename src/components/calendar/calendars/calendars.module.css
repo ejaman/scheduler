@@ -1,0 +1,8 @@
+.container {
+  position: relative;
+  background: sandybrown;
+  display: flex;
+  flex: 1;
+  margin: 3em 0;
+  text-align: center;
+}

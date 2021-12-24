@@ -1,21 +1,21 @@
-@value makerLightRed, makerWhite from '../../common/colors.css';
+@value makerDarkGrey,makerGrey,makerLightGrey,makerSnow from '../../common/colors.css';
 
 .container {
-  /* background-color: #DF8080; */
-  background-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 3px rgb(160, 160, 160);
+  background-color: makerSnow;
+  box-shadow: 5px 5px 3px rgb(119, 119, 119);
   border-radius: 5px;
   width: 17em;
   height: 23em;
-  text-align: center;
-  justify-content: center;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  justify-content: center;
   margin-top: 5em;
   font-size: 1.4em;
 }
 .title {
-  margin: 1em;
+  margin: 1.5em;
+  color: makerDarkGrey;
 }
 .idLog {
   align-items: center;
@@ -31,7 +31,11 @@
   font-size: 1.2rem;
   padding: 0.5em;
   margin: 0.3em;
-  font-family: "DungGeunMo";
+  color: makerGrey;
+}
+.ment {
+  font-size: 0.8em;
+  margin: 2em;
 }
 .socialLog {
   align-items: center;
@@ -41,14 +45,13 @@
 .googleBtn,
 .gitBtn {
   padding: 0.5em;
-  background-color: #888888;
-  color: makerWhite;
+  background-color: makerGrey;
+  color: white;
   border: thin;
   border-radius: 5px;
   width: 90%;
   font-weight: bold;
   font-size: 1.2rem;
-  font-family: "DungGeunMo";
 }
 .logBtn {
   margin-top: 1em;
@@ -57,17 +60,10 @@
 .gitBtn {
   margin: 0.1em;
   margin-bottom: 3em;
-  background-color: white;
-  color: #888888;
-
   width: 45%;
 }
 .logBtn:hover,
 .googleBtn:hover,
 .gitBtn:hover {
   opacity: 0.8;
-}
-.ment {
-  font-size: 0.8em;
-  margin: 2em;
 }

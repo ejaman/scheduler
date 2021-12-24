@@ -1,5 +1,6 @@
+@value makerBlueGrey,makerWhite,makerBeige from '../../../common/colors.css';
 .form {
-  background-color: #eee9e5;
+  background-color: makerBeige;
   flex-basis: 50%;
   margin: 0 5em 0 4em;
   padding: 0 1em 1em 1em;
@@ -7,10 +8,14 @@
 .img {
   padding-top: 2.5em;
   width: 80%;
-  height: 45%;
+  height: 48%;
 }
 .date {
+  font-family: "GowunBatang-Regular";
+  padding-top: 1.5em;
   font-size: 1.3em;
+  font-weight: bold;
+  color: makerBlueGrey;
 }
 .container {
   align-items: center;
@@ -26,22 +31,19 @@
   font-family: "GowunBatang-Regular";
   outline: 0;
 }
-.input {
-  margin-top: 1em;
-}
 .content {
   height: 20em;
   font-size: 1.1em;
 }
-.imgBtn,
 .saveBtn {
   width: 40%;
   border: none;
   padding: 0.5em;
   font-size: 1em;
-  background: #dad5d1;
+  background: makerBlueGrey;
+  color: makerWhite;
+  font-weight: bold;
 }
-.imgBtn:hover,
 .saveBtn:hover {
   opacity: 0.7;
 }

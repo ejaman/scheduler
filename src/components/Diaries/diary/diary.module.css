@@ -1,6 +1,5 @@
-@value makerWhiter from '../../../common/colors.css';
 .diary {
-  background-color: makerWhiter;
+  background-color: makerWhite;
 }
 .container {
   position: relative;

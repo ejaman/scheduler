@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router";
 import styles from "./login.module.css";
 
+const Istyle = {
+  marginRight: "0.5em",
+};
 const Login = ({ authService }) => {
   const navigate = useNavigate();
 
@@ -34,10 +37,10 @@ const Login = ({ authService }) => {
       <div className={styles.socialLog}>
         <p className={styles.ment}>or login with</p>
         <button className={styles.googleBtn} onClick={onLogin}>
-          <i className="fab fa-google"></i>Google
+          <i className="fab fa-google" style={Istyle}></i>Google
         </button>
         <button className={styles.gitBtn} onClick={onLogin}>
-          <i className="fab fa-github"></i>Github
+          <i className="fab fa-github" style={Istyle}></i>Github
         </button>
       </div>
     </section>

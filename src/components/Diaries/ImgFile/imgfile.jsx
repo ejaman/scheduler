@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import ImgUploader from "../../../service/imgUploader";
 import styles from "./imgfile.module.css";
 
 const Imgfile = ({ imgUploader, onFileChange }) => {
@@ -19,7 +18,7 @@ const Imgfile = ({ imgUploader, onFileChange }) => {
   };
 
   return (
-    <div>
+    <div className={styles.file}>
       <input
         ref={inputRef}
         className={styles.input}
@@ -28,7 +27,12 @@ const Imgfile = ({ imgUploader, onFileChange }) => {
         name="file"
         onChange={onChange}
       />
-      {!loading && <button onClick={onBtnClick}>file</button>}
+      {!loading && (
+        <button className={styles.fileBtn} onClick={onBtnClick}>
+          Img file
+        </button>
+      )}
+      {loading && <div className={styles.loading}>Loading...</div>}
     </div>
   );
 };

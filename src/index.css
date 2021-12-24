@@ -5,10 +5,9 @@
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
-  font-family: "MaruBuri-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff")
+  font-family: "GowunBatang-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Bold.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
@@ -17,7 +16,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif, "GowunBatang-Regular";
+    sans-serif, "GowunBatang-Regular", "GowunBatang-Bold";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

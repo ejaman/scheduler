@@ -38,7 +38,7 @@ const AddDiary = ({ onAdd, FileInput }) => {
 
   return (
     <form ref={formRef} className={styles.form}>
-      <img className={styles.img} src={url}></img>
+      <img className={styles.img} src={url} alt="img"></img>
       <div className={styles.container}>
         <p className={styles.date}>{today}</p>
         <input

@@ -1,11 +1,10 @@
-import React, { useRef } from "react";
-import styles from "./thismonth.module.css";
+import React from "react";
 import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction"; //
 
-const Thismonth = (props) => {
+const List = (props) => {
   const handleDateClick = (event) => {
     console.log(event);
   };
@@ -32,14 +31,11 @@ const Thismonth = (props) => {
     },
   ];
   return (
-    <form className={styles.form}>
+    <form>
       <h1>this month</h1>
       <FullCalendar
-        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-        initialView="dayGridMonth"
-        // headerToolbar={{
-        //   center: "dayGridMonth,  timeGrid new",
-        // }}
+        plugins={[timeGridPlugin, interactionPlugin]}
+        initialView="timeGrid"
         // customButtons={{
         //   text: "new",
         //   click: onBtnClick,
@@ -54,4 +50,4 @@ const Thismonth = (props) => {
   );
 };
 
-export default Thismonth;
+export default List;

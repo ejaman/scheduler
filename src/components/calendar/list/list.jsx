@@ -1,10 +1,10 @@
 import React from "react";
+import styles from "./list.module.css";
 import FullCalendar from "@fullcalendar/react"; // must go before plugins
-import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
-import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction"; //
+import listPlugin from "@fullcalendar/list";
 
-const List = (props) => {
+const List = ({ events }) => {
   const handleDateClick = (event) => {
     console.log(event);
   };
@@ -16,36 +16,26 @@ const List = (props) => {
   const onBtnClick = () => {
     console.log("new event");
   };
-  const events = [
-    {
-      id: 1,
-      title: "event1",
-      start: "2021-12-24",
-      end: "2021-12-25",
-    },
-    {
-      id: 2,
-      title: "test",
-      start: "2021-12-12",
-      end: "2021-12-14",
-    },
-  ];
+
   return (
-    <form>
-      <h1>this month</h1>
-      <FullCalendar
-        plugins={[timeGridPlugin, interactionPlugin]}
-        initialView="timeGrid"
-        // customButtons={{
-        //   text: "new",
-        //   click: onBtnClick,
-        // }}
-        events={events}
-        eventColor="red"
-        nowIndicator
-        dateClick={handleDateClick}
-        eventClick={handleEventClick}
-      />
+    <form className={styles.form}>
+      <h1>This week</h1>
+      <div className={styles.list}>
+        <FullCalendar
+          plugins={[listPlugin, interactionPlugin]}
+          initialView="listWeek"
+          // customButtons={{
+          //   text: "new",
+          //   click: onBtnClick,
+          // }}
+          events={events}
+          nowIndicator
+          dateClick={handleDateClick}
+          eventClick={handleEventClick}
+          height="90%"
+        />
+        <button>add</button>
+      </div>
     </form>
   );
 };

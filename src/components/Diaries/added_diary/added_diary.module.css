@@ -1,6 +1,7 @@
 @value makerBeige from '../../../common/colors.css';
 .added {
   background-color: makerBeige;
+  border-radius: 5px;
   flex-basis: 36%;
 }
 

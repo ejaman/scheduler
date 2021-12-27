@@ -30,6 +30,8 @@
 }
 .loginBtn:hover {
   opacity: 0.7;
+  background-color: makerBlueGrey;
+  color: white;
 }
 .link {
   color: makerBlueGrey;

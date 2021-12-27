@@ -5,7 +5,7 @@ import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction"; //
 
-const Thismonth = (props) => {
+const Thismonth = ({ events }) => {
   const handleDateClick = (event) => {
     console.log(event);
   };
@@ -17,39 +17,22 @@ const Thismonth = (props) => {
   const onBtnClick = () => {
     console.log("new event");
   };
-  const events = [
-    {
-      id: 1,
-      title: "event1",
-      start: "2021-12-24",
-      end: "2021-12-25",
-    },
-    {
-      id: 2,
-      title: "test",
-      start: "2021-12-12",
-      end: "2021-12-14",
-    },
-  ];
+
   return (
     <form className={styles.form}>
-      <h1>this month</h1>
-      <FullCalendar
-        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-        initialView="dayGridMonth"
-        // headerToolbar={{
-        //   center: "dayGridMonth,  timeGrid new",
-        // }}
-        // customButtons={{
-        //   text: "new",
-        //   click: onBtnClick,
-        // }}
-        events={events}
-        eventColor="red"
-        nowIndicator
-        dateClick={handleDateClick}
-        eventClick={handleEventClick}
-      />
+      <h1>This month</h1>
+      <div className={styles.cal}>
+        <FullCalendar
+          // theme="Litera"
+          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+          initialView="dayGridMonth"
+          events={events}
+          eventColor="#8F93A3"
+          nowIndicator
+          dateClick={handleDateClick}
+          eventClick={handleEventClick}
+        />
+      </div>
     </form>
   );
 };

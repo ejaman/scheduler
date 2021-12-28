@@ -7,6 +7,7 @@ class AuthService {
     const authProvider = new firebase.auth[`${provider}AuthProvider`]();
     return fbApp.auth().signInWithPopup(authProvider);
   }
+
   // 사용자가 바뀔 때 사용자 정보를 전달
   onAuthChange(onUserChanged) {
     firebase.auth().onAuthStateChanged((user) => {
@@ -17,6 +18,8 @@ class AuthService {
   logout() {
     firebase.auth().signOut();
   }
+
+  // email login
 }
 
 export default AuthService;

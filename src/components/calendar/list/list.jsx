@@ -24,12 +24,7 @@ const List = ({ schedules, onAdd }) => {
         <FullCalendar
           plugins={[listPlugin, interactionPlugin]}
           initialView="listWeek"
-          // customButtons={{
-          //   text: "new",
-          //   click: onBtnClick,
-          // }}
           events={schedules}
-          nowIndicator
           dateClick={handleDateClick}
           eventClick={handleEventClick}
           height="90%"

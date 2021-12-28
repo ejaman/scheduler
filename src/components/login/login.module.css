@@ -1,68 +1,47 @@
-@value makerDarkGrey,makerGrey,makerLightGrey,makerSnow from '../../common/colors.css';
+@value makerBlueGrey,makerDarkGrey,makerGrey,makerSnow,makerNavy from '../../common/colors.css';
 
 .container {
-  background-color: makerSnow;
+  background-color: makerBlueGrey;
   box-shadow: 5px 5px 3px rgb(119, 119, 119);
   border-radius: 5px;
   width: 17em;
-  height: 23em;
+  height: 15em;
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  margin-top: 5em;
+  margin-top: 8em;
   font-size: 1.4em;
 }
 .title {
   margin: 1.5em;
-  color: makerDarkGrey;
+  color: white;
 }
-.idLog {
-  align-items: center;
+
+.socialLog {
   display: flex;
   flex-direction: column;
-}
-.id,
-.pw {
-  width: 90%;
-  border-radius: 10px;
-  border: thin;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 0.5em;
-  margin: 0.3em;
-  color: makerGrey;
-}
-.ment {
-  font-size: 0.8em;
-  margin: 2em;
-}
-.socialLog {
   align-items: center;
-  display: inline-block;
 }
-.logBtn,
+
 .googleBtn,
 .gitBtn {
   padding: 0.5em;
-  background-color: makerGrey;
-  color: white;
+  background-color: makerSnow;
+  color: makerNavy;
   border: thin;
   border-radius: 5px;
-  width: 90%;
+  width: 80%;
   font-weight: bold;
   font-size: 1.2rem;
 }
-.logBtn {
-  margin-top: 1em;
-}
+
 .googleBtn,
 .gitBtn {
   margin: 0.1em;
-  margin-bottom: 3em;
-  width: 45%;
+  margin-bottom: 1.5em;
 }
-.logBtn:hover,
+
 .googleBtn:hover,
 .gitBtn:hover {
   opacity: 0.8;

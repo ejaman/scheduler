@@ -5,32 +5,28 @@ import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction"; //
 
-const Thismonth = ({ schedules }) => {
-  const handleDateClick = (event) => {
-    console.log(event);
-  };
-
-  const onBtnClick = () => {
-    console.log("new event");
-  };
-
+const Thismonth = ({ schedules, onAdd }) => {
   const handleDateSelect = (selectInfo) => {
-    //근데 이렇게하면 데이터에서 지워지는게 아닌데...? 그리고 이벤트의 색 지정하는 법
-    let title = prompt("Please enter a new title for your event");
+    let title = prompt("Please enter a title for your event");
+    // let time = prompt("time?");
+    let color = prompt("Event color?");
     let calendarApi = selectInfo.view.calendar;
+    const defaultColor = title.length % 2 === 1 ? "#535665" : "#8F93A3";
 
-    calendarApi.unselect(); // clear date selection
-
+    calendarApi.unselect();
     if (title) {
       calendarApi.addEvent({
         id: Date.now(),
         title,
         start: selectInfo.startStr,
         end: selectInfo.endStr,
-        allDay: selectInfo.allDay,
+        allDay: selectInfo.allDay, //all day?
+        backgroundColor: color || defaultColor,
+        borderColor: color || defaultColor,
       });
     }
   };
+
   const handleEventClick = (clickInfo) => {
     if (window.confirm(`delete the event '${clickInfo.event.title}'`)) {
       clickInfo.event.remove();
@@ -42,7 +38,6 @@ const Thismonth = ({ schedules }) => {
       <h1>This month</h1>
       <div className={styles.cal}>
         <FullCalendar
-          // theme="Litera"
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
           initialView="dayGridMonth"
           editable={true}
@@ -50,9 +45,7 @@ const Thismonth = ({ schedules }) => {
           select={handleDateSelect}
           eventClick={handleEventClick}
           events={schedules}
-          eventColor="#8F93A3"
           nowIndicator
-          dateClick={handleDateClick}
         />
       </div>
     </form>

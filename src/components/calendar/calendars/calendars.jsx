@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import Header from "../../header/header";
+import AddForm from "../addForm/addForm";
 import List from "../list/list";
 import Thismonth from "../thismonth/thismonth";
 import styles from "./calendars.module.css";
@@ -9,7 +10,7 @@ import styles from "./calendars.module.css";
 // 3. 이벤트 추가/ 삭제
 
 const Calendars = ({ authService }) => {
-  const [events, setEvents] = useState([
+  const [schedules, setSchedules] = useState([
     {
       id: 1,
       title: "event1",
@@ -27,7 +28,7 @@ const Calendars = ({ authService }) => {
       borderColor: "red",
     },
     {
-      id: 2,
+      id: 3,
       title: "test",
       start: "2021-12-28",
       end: "2021-12-29T07:00:00",
@@ -48,12 +49,22 @@ const Calendars = ({ authService }) => {
       }
     });
   });
+
+  // const addSchdule = (schedule) => {
+  //   setSchedules((schedules) => {
+  //     const added = { ...schedules };
+  //     added[schedule.id] = schedule;
+  //     return added;
+  //   });
+  // };
+
   return (
     <section className={styles.calenders}>
       <Header onLogout={onLogout} />
+      {/* <AddForm onAdd={addSchdule} /> */}
       <div className={styles.container}>
-        <Thismonth events={events} />
-        <List events={events} />
+        <Thismonth schedules={schedules} />
+        <List schedules={schedules} />
       </div>
     </section>
   );

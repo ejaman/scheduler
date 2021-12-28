@@ -4,7 +4,7 @@ import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import interactionPlugin from "@fullcalendar/interaction"; //
 import listPlugin from "@fullcalendar/list";
 
-const List = ({ events }) => {
+const List = ({ schedules, onAdd }) => {
   const handleDateClick = (event) => {
     console.log(event);
   };
@@ -28,13 +28,12 @@ const List = ({ events }) => {
           //   text: "new",
           //   click: onBtnClick,
           // }}
-          events={events}
+          events={schedules}
           nowIndicator
           dateClick={handleDateClick}
           eventClick={handleEventClick}
           height="90%"
         />
-        <button>add</button>
       </div>
     </form>
   );

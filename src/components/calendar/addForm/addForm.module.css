@@ -1,0 +1,9 @@
+.addform {
+  text-align: right;
+  width: 100%;
+  background-color: rosybrown;
+}
+.form {
+  display: flex;
+  align-items: center;
+}

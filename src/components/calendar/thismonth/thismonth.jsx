@@ -5,31 +5,47 @@ import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction"; //
 
-const Thismonth = ({ schedules, onAdd }) => {
-  const handleDateSelect = (selectInfo) => {
+const Thismonth = ({ schedules, onAdd, onDelete }) => {
+  const handleDateSelect = (event) => {
     let title = prompt("Please enter a title for your event");
-    // let time = prompt("time?");
-    let color = prompt("Event color?");
-    let calendarApi = selectInfo.view.calendar;
-    const defaultColor = title.length % 2 === 1 ? "#535665" : "#8F93A3";
+    let color = prompt("Event color?(choose 1,2,3,4,5 or type what you want)");
 
-    calendarApi.unselect();
+    function EventColor(color) {
+      switch (color) {
+        case "1":
+          return "#535665";
+        case "2":
+          return "#707483";
+        case "3":
+          return "#8F93A3";
+        case "4":
+          return "#666E8E";
+        case "5":
+          return "#A2AACE";
+        default:
+          return color;
+      }
+    }
+
+    const defaultColor = EventColor(color);
+    const schedule = {
+      id: Date.now(),
+      title,
+      start: event.startStr,
+      end: event.endStr,
+      backgroundColor: defaultColor,
+      borderColor: defaultColor,
+    };
+
     if (title) {
-      calendarApi.addEvent({
-        id: Date.now(),
-        title,
-        start: selectInfo.startStr,
-        end: selectInfo.endStr,
-        allDay: selectInfo.allDay, //all day?
-        backgroundColor: color || defaultColor,
-        borderColor: color || defaultColor,
-      });
+      onAdd(schedule);
     }
   };
 
-  const handleEventClick = (clickInfo) => {
-    if (window.confirm(`delete the event '${clickInfo.event.title}'`)) {
-      clickInfo.event.remove();
+  const handleEventClick = (click) => {
+    if (window.confirm(`delete the event '${click.event.title}'`)) {
+      const eventId = click.event._def.publicId * 1;
+      onDelete(eventId);
     }
   };
 

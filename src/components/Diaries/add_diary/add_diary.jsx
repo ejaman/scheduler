@@ -32,6 +32,7 @@ const AddDiary = ({ onAdd, FileInput }) => {
     };
     formRef.current.reset(); // 사용자가 입력해서 제출하고 나면 폼이 리셋되도록
     onAdd(feed);
+    console.log(feed);
   };
   const DEFAULT_IMAGE = "/images/snow.jpeg";
   const url = file.imgURL || DEFAULT_IMAGE;

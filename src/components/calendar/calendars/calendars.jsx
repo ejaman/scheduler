@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import Header from "../../header/header";
-import AddForm from "../addForm/addForm";
 import List from "../list/list";
 import Thismonth from "../thismonth/thismonth";
 import styles from "./calendars.module.css";
-
-// 2. 풀캘린더 스타일링
-// 3. 이벤트 추가/ 삭제
 
 const Calendars = ({ authService }) => {
   const [schedules, setSchedules] = useState([
@@ -51,11 +47,15 @@ const Calendars = ({ authService }) => {
   });
 
   const addSchdule = (schedule) => {
-    setSchedules((schedules) => {
-      const added = { ...schedules };
-      added[schedule.id] = schedule;
-      return added;
-    });
+    const added = [...schedules, schedule];
+    setSchedules(added);
+  };
+
+  const deleteSchedule = (id) => {
+    const test = [...schedules];
+    const result = test.filter((item) => item.id !== id);
+    // console.log(result);
+    setSchedules(result);
   };
 
   return (
@@ -63,7 +63,11 @@ const Calendars = ({ authService }) => {
       <Header onLogout={onLogout} />
       {/* <AddForm onAdd={addSchdule} /> */}
       <div className={styles.container}>
-        <Thismonth schedules={schedules} onAdd={addSchdule} />
+        <Thismonth
+          schedules={schedules}
+          onAdd={addSchdule}
+          onDelete={deleteSchedule}
+        />
         <List schedules={schedules} />
       </div>
     </section>

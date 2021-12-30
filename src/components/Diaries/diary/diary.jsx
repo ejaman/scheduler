@@ -43,6 +43,7 @@ const Diary = ({ authService, FileInput }) => {
       updated[feed.id] = feed;
       return updated;
     });
+    console.log(diaries);
   };
 
   const deleteFeed = (feed) => {

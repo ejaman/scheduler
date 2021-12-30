@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import styles from "./thismonth.module.css";
 import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
@@ -9,23 +9,7 @@ const Thismonth = ({ schedules, onAdd, onDelete }) => {
   const handleDateSelect = (event) => {
     let title = prompt("Please enter a title for your event");
     let color = prompt("Event color?(choose 1,2,3,4,5 or type what you want)");
-
-    function EventColor(color) {
-      switch (color) {
-        case "1":
-          return "#535665";
-        case "2":
-          return "#707483";
-        case "3":
-          return "#8F93A3";
-        case "4":
-          return "#666E8E";
-        case "5":
-          return "#A2AACE";
-        default:
-          return color;
-      }
-    }
+    event.view.calendar.unselect(); // clear date selection
 
     const defaultColor = EventColor(color);
     const schedule = {
@@ -66,6 +50,23 @@ const Thismonth = ({ schedules, onAdd, onDelete }) => {
       </div>
     </form>
   );
+
+  function EventColor(color) {
+    switch (color) {
+      case "1":
+        return "#535665";
+      case "2":
+        return "#707483";
+      case "3":
+        return "#8F93A3";
+      case "4":
+        return "#666E8E";
+      case "5":
+        return "#A2AACE";
+      default:
+        return color;
+    }
+  }
 };
 
 export default Thismonth;

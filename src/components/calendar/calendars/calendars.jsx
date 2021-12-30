@@ -5,7 +5,7 @@ import List from "../list/list";
 import Thismonth from "../thismonth/thismonth";
 import styles from "./calendars.module.css";
 
-const Calendars = ({ authService }) => {
+const Calendars = ({ authService, Repo }) => {
   const [schedules, setSchedules] = useState([
     {
       id: 1,
@@ -51,9 +51,9 @@ const Calendars = ({ authService }) => {
     setSchedules(added);
   };
 
-  const deleteSchedule = (id) => {
+  const deleteSchedule = (eventid) => {
     const test = [...schedules];
-    const result = test.filter((item) => item.id !== id);
+    const result = test.filter((item) => item.id !== eventid);
     // console.log(result);
     setSchedules(result);
   };

@@ -1,41 +1,40 @@
 import styles from "./diary.module.css";
 import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router";
 import Header from "../../header/header";
 import AddDiary from "../add_diary/add_diary";
 import AddedDiary from "../added_diary/added_diary";
-import { useNavigate } from "react-router";
 
-const Diary = ({ authService, FileInput }) => {
-  const [diaries, setDiaries] = useState({
-    1: {
-      id: 1,
-      date: "2021.12.20",
-      title: "first diary",
-      content: "블라브 랄르바 르라브라블 르랄브라 를아니멘  ",
-      file: "files",
-      imgURL: null,
-    },
-    2: {
-      id: 2,
-      date: "2021.12.20",
-      title: "2end diary",
-      content: "어쩌구저 저구저어 우저우 어주엉 넝어님 아야웅 어애저어내멏아",
-      file: "files",
-      imgURL: null,
-    },
-  });
+const Diary = ({ authService, FileInput, Repo }) => {
+  const location = useLocation(); // check
+  const locationState = location?.state;
+  const [diaries, setDiaries] = useState({});
+  const [userId, setUserId] = useState(locationState && locationState.id); //check!
+  const navigate = useNavigate();
+
   const onLogout = () => {
     authService.logout();
   };
 
-  const navigate = useNavigate();
+  // for login
   useEffect(() => {
     authService.onAuthChange((user) => {
-      if (!user) {
+      if (user) {
+        setUserId(user.uid);
+      } else {
         navigate("/");
       }
     });
   });
+
+  // mount되었을 때 또는 사용자의 아이디가 변경될 때 사용
+  useEffect(() => {
+    if (!userId) {
+      return;
+    }
+    const stopSync = Repo.syncFeed(userId, (diaries) => setDiaries(diaries));
+    return () => stopSync(); //unmount
+  }, [userId]);
 
   const addAndUpdateFeed = (feed) => {
     setDiaries((diaries) => {
@@ -43,7 +42,7 @@ const Diary = ({ authService, FileInput }) => {
       updated[feed.id] = feed;
       return updated;
     });
-    console.log(diaries);
+    Repo.saveDiary(userId, feed);
   };
 
   const deleteFeed = (feed) => {
@@ -52,6 +51,7 @@ const Diary = ({ authService, FileInput }) => {
       delete deleted[feed.id];
       return deleted;
     });
+    Repo.removeDiary(userId, feed);
   };
   return (
     <section className={styles.diary}>

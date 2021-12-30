@@ -30,15 +30,21 @@ const Login = ({ authService }) => {
   return (
     <section className={styles.container}>
       <h1 className={styles.title}>Scheduler</h1>
-      {/* <div className={styles.idLog}>
+      <div className={styles.idLog}>
         <input
           ref={inputRef}
           className={styles.email}
           placeholder="email"
         ></input>
+        <input
+          ref={inputRef}
+          className={styles.pw}
+          placeholder="password"
+        ></input>
         <button className={styles.logBtn}>Login</button>
-      </div> */}
+      </div>
       <div className={styles.socialLog}>
+        <p className={styles.ment}>or login with</p>
         <button className={styles.googleBtn} onClick={onLogin}>
           <i className="fab fa-google" style={Istyle}></i>Google
         </button>

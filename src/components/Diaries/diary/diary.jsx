@@ -53,6 +53,7 @@ const Diary = ({ authService, FileInput, Repo }) => {
     });
     Repo.removeDiary(userId, feed);
   };
+
   return (
     <section className={styles.diary}>
       <Header onLogout={onLogout} />

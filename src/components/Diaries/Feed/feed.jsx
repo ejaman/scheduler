@@ -8,7 +8,6 @@ const Feed = ({ feed, onDelete, onUpdate }) => {
   const url = imgURL || DEFAULT_IMAGE;
 
   const onChange = (event) => {
-    console.log(feed);
     if (event.currentTarget == null) {
       return;
     }

@@ -4,10 +4,10 @@ import "./index.css";
 import App from "./app";
 import reportWebVitals from "./reportWebVitals";
 import "@fortawesome/fontawesome-free/js/all.js";
-import AuthService from "./service/auth_service";
+import AuthService from "./service/authService";
 import ImgUploader from "./service/imgUploader";
 import Imgfile from "./components/diaries/ImgFile/imgfile";
-import FeedRepository from "./service/feed_repository";
+import FeedRepository from "./service/feedRepository";
 
 const authService = new AuthService();
 const Repo = new FeedRepository();

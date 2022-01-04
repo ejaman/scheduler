@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 import Feed from "../Feed/feed";
 import MonthBtn from "../monthBtn/monthBtn";
-import styles from "./added_diary.module.css";
+import styles from "./addedDiary.module.css";
 
 const AddedDiary = ({ diaries, onDelete, onUpdate }) => {
   const test = Object.values(diaries);

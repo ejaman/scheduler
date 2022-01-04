@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import styles from "./add_diary.module.css";
+import styles from "./addDiary.module.css";
 
 const AddDiary = ({ onAdd, FileInput }) => {
   const formRef = useRef();

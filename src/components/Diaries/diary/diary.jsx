@@ -2,8 +2,8 @@ import styles from "./diary.module.css";
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import Header from "../../header/header";
-import AddDiary from "../add_diary/add_diary";
-import AddedDiary from "../added_diary/added_diary";
+import AddDiary from "../addDiary/addDiary";
+import AddedDiary from "../addedDiary/addedDiary";
 
 const Diary = ({ authService, FileInput, Repo }) => {
   const location = useLocation(); // check

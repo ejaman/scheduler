@@ -25,6 +25,7 @@ const AddDiary = ({ onAdd, FileInput }) => {
     const feed = {
       id: Date.now(), //uuid
       date: today,
+      month: month, // month 별로 일기보는데 필요
       title: titleRef.current.value || "",
       content: contentRef.current.value || "",
       file: file.file || "",
@@ -57,7 +58,6 @@ const AddDiary = ({ onAdd, FileInput }) => {
         ></textarea>
       </div>
       <FileInput name={file.file} onFileChange={onFileChange} />
-      {/* <button className={styles.imgBtn}>img</button> */}
       <button className={styles.saveBtn} onClick={onSubmit}>
         save
       </button>

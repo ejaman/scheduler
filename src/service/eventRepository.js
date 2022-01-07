@@ -1,0 +1,1 @@
+import fbApp from "./firebaseAuth";

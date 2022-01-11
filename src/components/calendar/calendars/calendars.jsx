@@ -45,29 +45,30 @@ const Calendars = ({ authService, Repo }) => {
   });
 
   // mount되었을 때 또는 사용자의 아이디가 변경될 때 사용 - 읽어오는데 문제가 있음
+  // 지금 마운트되면서 새로운 setSchedule이 뜨긴함 문제는 이 새로운 스케쥴이 파베에이ㅆ는 데이터를 못 가져온다는거
   useEffect(() => {
     if (!userId) {
       return;
     }
-    const stopSync = Repo.syncSchedule(userId, (schedules) =>
-      setSchedules(schedules)
-    );
+    // const stopSync = Repo.syncSchedule(userId, (schedules) =>
+    //   setSchedules(schedules)
+    // );
 
-    return () => stopSync(); //unmount
+    // return () => stopSync(); //unmount
   }, [userId]);
 
   // 실행됨
   const addSchdule = (schedule) => {
     const added = [...schedules, schedule];
     setSchedules(added);
-    Repo.saveSchedule(userId, schedule);
+    Repo.saveSchedule(userId, schedule); // 작동됨
   };
 
   const deleteSchedule = (eventid) => {
     const test = [...schedules];
     const result = test.filter((item) => item.id !== eventid);
     setSchedules(result);
-    Repo.removeSchedule(userId, eventid);
+    Repo.removeSchedule(userId, eventid); // 작동안됨
   };
 
   return (

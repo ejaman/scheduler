@@ -9,6 +9,17 @@
   text-align: center;
   min-height: 0;
 }
+.sidebar {
+}
+
+.add {
+  display: none;
+}
+
+.sidebar:checked ~ .add {
+  display: contents;
+}
+
 @media screen and (max-width: 62rem) {
   .container {
     flex-direction: column;

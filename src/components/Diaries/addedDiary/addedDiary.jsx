@@ -5,13 +5,6 @@ import MonthBtn from "../monthBtn/monthBtn";
 import styles from "./addedDiary.module.css";
 
 const AddedDiary = ({ diaries, onDelete, onUpdate }) => {
-  const test = Object.values(diaries);
-  // console.log(test);
-  // console.log(test[0]);
-  // for (let i in test[0]) {
-  //   console.log(test[0][i]);
-  // }
-
   return (
     <section className={styles.added}>
       <MonthBtn />

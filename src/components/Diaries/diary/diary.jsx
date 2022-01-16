@@ -58,11 +58,18 @@ const Diary = ({ authService, FileInput, Repo }) => {
     <section className={styles.diary}>
       <Header onLogout={onLogout} />
       <div className={styles.container}>
-        <AddDiary
-          diaries={diaries}
-          onAdd={addAndUpdateFeed}
-          FileInput={FileInput}
-        />
+        <input className={styles.sidebar} type="checkbox" />
+        <div className={styles.add}>
+          <label className="on-off" htmlfor="sidebar">
+            x
+          </label>
+          <AddDiary
+            diaries={diaries}
+            onAdd={addAndUpdateFeed}
+            FileInput={FileInput}
+          />
+        </div>
+
         <AddedDiary
           diaries={diaries}
           onDelete={deleteFeed}

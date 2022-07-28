@@ -6,11 +6,12 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction"; //
 
 const Thismonth = ({ schedules, onAdd, onDelete }) => {
+  console.log(schedules);
+  console.log(Object.values(schedules));
   const handleDateSelect = (event) => {
     let title = prompt("Please enter a title for your event");
     let color = prompt("Event color?(choose 1,2,3,4,5 or type what you want)");
     event.view.calendar.unselect(); // clear date selection
-
     const defaultColor = EventColor(color);
     const schedule = {
       id: Date.now(),
@@ -32,7 +33,7 @@ const Thismonth = ({ schedules, onAdd, onDelete }) => {
       onDelete(eventId);
     }
   };
-
+  // 삭제 이벤트가 안먹음 일단 대충 파악함 ㅎㅎ
   return (
     <form className={styles.form}>
       <h1>This month</h1>
@@ -44,7 +45,7 @@ const Thismonth = ({ schedules, onAdd, onDelete }) => {
           selectable={true}
           select={handleDateSelect}
           eventClick={handleEventClick}
-          events={schedules}
+          events={Object.values(schedules)}
           nowIndicator
         />
       </div>

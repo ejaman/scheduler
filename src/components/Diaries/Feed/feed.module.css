@@ -1,14 +1,15 @@
 @value makerBlueGrey,makerWhite,makerBeige from '../../../common/colors.css';
+
 .feed {
   background-color: white;
   box-shadow: 5px 3px 17px 4px rgba(0, 0, 0, 0.61);
-  width: 95%;
+  width: 23em;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0.5rem;
-  padding: 1rem;
-  margin: 2em;
+  padding: 0.5rem;
+  margin: 1em;
   list-style: none;
 }
 .feed:hover {

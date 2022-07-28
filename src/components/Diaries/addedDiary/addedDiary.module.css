@@ -2,21 +2,20 @@
 .added {
   background-color: makerBeige;
   border-radius: 5px;
-  flex-basis: 36%;
+  width: 100%;
 }
 
 .feeds {
+  /* background-color: rosybrown; */
   display: flex;
-  flex-direction: column;
   align-items: center;
+  /* width: 86.5em; */
   margin: 0;
   padding: 0em 2em;
-  overflow: hidden;
-  height: 150vh;
+  overflow: auto;
 }
 .feeds:hover {
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow-x: scroll;
 }
 
 @media screen and (max-width: 62rem) {

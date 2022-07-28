@@ -2,15 +2,15 @@
 .form {
   background-color: makerBeige;
   border-radius: 5px;
-  flex-basis: 50%;
-  margin: 0 5em 0 4em;
-  padding: 0 1em 1em 1em;
   overflow-y: auto;
+  flex-direction: row;
 }
 .img {
-  padding-top: 2.5em;
-  width: 80%;
-  height: 48%;
+  margin: 2em;
+  border-radius: 5px;
+  width: 40%;
+  height: 43%;
+  background-color: rebeccapurple;
 }
 .date {
   font-family: "GowunBatang-Regular";
@@ -20,13 +20,12 @@
   color: makerBlueGrey;
 }
 .container {
-  align-items: center;
   display: flex;
   flex-direction: column;
 }
 .input,
 .content {
-  width: 80%;
+  width: 45%;
   border: 0;
   font-size: 1.2em;
   padding: 0.7em;
@@ -38,7 +37,7 @@
   font-size: 1.1em;
 }
 .saveBtn {
-  width: 40%;
+  width: 22.5%;
   border: none;
   padding: 0.5em;
   font-size: 1em;

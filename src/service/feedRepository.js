@@ -29,6 +29,7 @@ class FeedRepository {
 
   saveSchedule(userId, schedule) {
     fbApp.database().ref(`${userId}/schedules/${schedule.id}`).set(schedule);
+    console.log("saved??");
   }
   removeSchedule(userId, schedule) {
     fbApp.database().ref(`${userId}/schedules/${schedule.id}`).remove();

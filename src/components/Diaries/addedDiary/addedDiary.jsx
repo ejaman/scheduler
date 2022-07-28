@@ -1,13 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import Feed from "../Feed/feed";
-import MonthBtn from "../monthBtn/monthBtn";
 import styles from "./addedDiary.module.css";
 
 const AddedDiary = ({ diaries, onDelete, onUpdate }) => {
   return (
     <section className={styles.added}>
-      <MonthBtn />
       <ul className={styles.feeds}>
         {Object.keys(diaries).map((key) => (
           <Feed

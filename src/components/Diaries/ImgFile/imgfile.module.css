@@ -1,7 +1,7 @@
 @value makerWhite, makerBlueGrey from '../../../common/colors.css';
 .file {
   display: inline-block;
-  width: 40%;
+  width: 22.5%;
 }
 .input {
   display: none;

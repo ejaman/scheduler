@@ -12,16 +12,16 @@ const Calendars = ({ authService, Repo }) => {
     {
       id: 2,
       title: "test1",
-      start: "2021-12-25",
-      end: "2021-12-27",
+      start: "2022-07-25",
+      end: "2022-08-01",
       backgroundColor: "#535665",
       borderColor: "#535665",
     },
     {
       id: 3,
       title: "test2",
-      start: "2021-12-28",
-      end: "2021-12-29T07:00:00",
+      start: "2022-07-28",
+      end: "2022-07-29T07:00:00",
       backgroundColor: "#8F93A3",
       borderColor: "#8F93A3",
     },
@@ -50,20 +50,21 @@ const Calendars = ({ authService, Repo }) => {
     if (!userId) {
       return;
     }
-    // const stopSync = Repo.syncSchedule(userId, (schedules) =>
-    //   setSchedules(schedules)
-    // );
-
-    // return () => stopSync(); //unmount
+    const stopSync = Repo.syncSchedule(userId, (schedules) =>
+      setSchedules(schedules)
+    );
+    return () => stopSync(); //unmount
   }, [userId]);
 
   // 실행됨
   const addSchdule = (schedule) => {
     const added = [...schedules, schedule];
     setSchedules(added);
+    // console.log(added, schedule);
     Repo.saveSchedule(userId, schedule); // 작동됨
   };
 
+  console.log(schedules);
   const deleteSchedule = (eventid) => {
     const test = [...schedules];
     const result = test.filter((item) => item.id !== eventid);

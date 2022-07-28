@@ -1,4 +1,4 @@
-# scheduler
+# maker your photo diary!
 
 리액트와 파이어베이스, 클라우디너리를 사용해 만든 일기, 기록 프로그램 <br>
 (use react & firebase & cloudinary & fullcalendar) <br> <br>

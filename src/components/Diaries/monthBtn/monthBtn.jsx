@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./monthBtn.module.css";
 
+// 현재 사용하지 않는 파일
 const MonthBtn = ({ feed }) => {
   const onBtnClick = (event) => {
     console.log(event.currentTarget.textContent);

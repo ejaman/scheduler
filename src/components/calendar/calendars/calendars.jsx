@@ -8,24 +8,7 @@ import styles from "./calendars.module.css";
 const Calendars = ({ authService, Repo }) => {
   const location = useLocation();
   const locationState = location?.state;
-  const [schedules, setSchedules] = useState([
-    {
-      id: 2,
-      title: "test1",
-      start: "2022-07-25",
-      end: "2022-08-01",
-      backgroundColor: "#535665",
-      borderColor: "#535665",
-    },
-    {
-      id: 3,
-      title: "test2",
-      start: "2022-07-28",
-      end: "2022-07-29T07:00:00",
-      backgroundColor: "#8F93A3",
-      borderColor: "#8F93A3",
-    },
-  ]);
+  const [schedules, setSchedules] = useState([]);
   const [userId, setUserId] = useState(locationState && locationState.id); //check!
   const navigate = useNavigate();
 
@@ -51,7 +34,7 @@ const Calendars = ({ authService, Repo }) => {
       return;
     }
     const stopSync = Repo.syncSchedule(userId, (schedules) =>
-      setSchedules(schedules)
+      setSchedules(Object.values(schedules))
     );
     return () => stopSync(); //unmount
   }, [userId]);
@@ -60,16 +43,17 @@ const Calendars = ({ authService, Repo }) => {
   const addSchdule = (schedule) => {
     const added = [...schedules, schedule];
     setSchedules(added);
-    // console.log(added, schedule);
+
     Repo.saveSchedule(userId, schedule); // 작동됨
   };
 
-  console.log(schedules);
   const deleteSchedule = (eventid) => {
+    console.log(eventid);
     const test = [...schedules];
     const result = test.filter((item) => item.id !== eventid);
+    console.log(result);
     setSchedules(result);
-    Repo.removeSchedule(userId, eventid); // 작동안됨
+    Repo.removeSchedule(userId, eventid); // 작동 안됨
   };
 
   return (

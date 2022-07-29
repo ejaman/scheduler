@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   background-color: white;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 10px;
   width: 25rem;
   height: 30rem;
@@ -16,7 +15,6 @@ export const Container = styled.section`
 `;
 
 export const Title = styled.h1`
-  margin: 1.5rem;
   font-weight: bold;
 `;
 

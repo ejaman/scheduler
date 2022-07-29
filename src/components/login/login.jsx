@@ -36,7 +36,10 @@ const Login = ({ authService }) => {
 
   return (
     <Container>
-      <Title>Scheduler</Title>
+      <Div>
+        <Title>MyDiary</Title>
+        <PText>manage your daily life with me</PText>
+      </Div>
       <Div>
         <LoginInput ref={inputRef} placeholder="email" />
         <LoginInput ref={inputRef} placeholder="password" />

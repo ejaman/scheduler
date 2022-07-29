@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styles from "./app.module.css";
 import Login from "./components/login/login";
-import Diary from "./components/diaries/diary/diary";
 import Calendars from "./components/calendar/calendars/calendars";
+import Diary from "./components/diaries/diary/diary";
 
 function App({ authService, FileInput, Repo }) {
   return (

@@ -1,14 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
 
-import {
-  BasicBtn,
-  Container,
-  Div,
-  LoginInput,
-  PText,
-  Title,
-} from "./loginComponents";
+import { Container, Div, LoginInput, PText } from "./loginComponents";
+import { Title } from "../Titles/titles";
+import { BasicBtn } from "../Buttons/buttons";
 
 const Istyle = {
   marginRight: "0.5em",

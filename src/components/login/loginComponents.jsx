@@ -14,10 +14,6 @@ export const Container = styled.section`
   font-size: 1.4rem;
 `;
 
-export const Title = styled.h1`
-  font-weight: bold;
-`;
-
 export const Div = styled.div``;
 
 export const LoginInput = styled.input`
@@ -31,23 +27,6 @@ export const LoginInput = styled.input`
   margin: 0.5rem;
 `;
 
-export const BasicBtn = styled.button`
-  padding: 0.6rem;
-  margin-top: 0.5rem;
-  background-color: black;
-  color: white;
-  border: thin;
-  border-radius: 5px;
-  width: 90%;
-  font-weight: 600;
-  font-size: 1.1rem;
-  border: 2px solid;
-  &:hover {
-    border: 2px solid;
-    background-color: white;
-    color: black;
-  }
-`;
 export const PText = styled.p`
   font-size: 0.9rem;
   margin: 1rem;

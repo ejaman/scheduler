@@ -1,7 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
 
-import styles from "./login.module.css";
+import {
+  BasicBtn,
+  Container,
+  Div,
+  LoginInput,
+  PText,
+  Title,
+} from "./loginComponents";
 
 const Istyle = {
   marginRight: "0.5em",
@@ -28,31 +35,23 @@ const Login = ({ authService }) => {
   });
 
   return (
-    <section className={styles.container}>
-      <h1 className={styles.title}>Scheduler</h1>
-      <div className={styles.idLog}>
-        <input
-          ref={inputRef}
-          className={styles.email}
-          placeholder="email"
-        ></input>
-        <input
-          ref={inputRef}
-          className={styles.pw}
-          placeholder="password"
-        ></input>
-        <button className={styles.logBtn}>Login</button>
-      </div>
-      <div className={styles.socialLog}>
-        <p className={styles.ment}>or login with</p>
-        <button className={styles.googleBtn} onClick={onLogin}>
+    <Container>
+      <Title>Scheduler</Title>
+      <Div>
+        <LoginInput ref={inputRef} placeholder="email" />
+        <LoginInput ref={inputRef} placeholder="password" />
+        <BasicBtn>Login</BasicBtn>
+      </Div>
+      <Div>
+        <PText>or login with</PText>
+        <BasicBtn onClick={onLogin}>
           <i className="fab fa-google" style={Istyle}></i>Google
-        </button>
-        <button className={styles.gitBtn} onClick={onLogin}>
+        </BasicBtn>
+        <BasicBtn onClick={onLogin}>
           <i className="fab fa-github" style={Istyle}></i>Github
-        </button>
-      </div>
-    </section>
+        </BasicBtn>
+      </Div>
+    </Container>
   );
 };
 

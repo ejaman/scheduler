@@ -14,8 +14,6 @@ export const Container = styled.section`
   font-size: 1.4rem;
 `;
 
-export const Div = styled.div``;
-
 export const LoginInput = styled.input`
   width: 90%;
   border: none;

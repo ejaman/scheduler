@@ -1,7 +1,7 @@
 import styles from "./diary.module.css";
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
-import Header from "../../header/header";
+
 import AddDiary from "../addDiary/addDiary";
 import AddedDiary from "../addedDiary/addedDiary";
 // import MonthBtn from "../monthBtn/monthBtn";
@@ -62,7 +62,7 @@ const Diary = ({ authService, FileInput, Repo }) => {
 
   return (
     <section className={styles.diary}>
-      <Header onLogout={onLogout} />
+      {/* <Header onLogout={onLogout} /> */}
       <button className={styles.openBtn} onClick={onOpen}>
         {open ? "close" : "add diary"}
       </button>

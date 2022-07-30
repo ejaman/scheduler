@@ -1,16 +1,17 @@
 import React from "react";
-import { BasicBtn, TabBtn } from "../Buttons/buttons";
+import { RoundBtn, TabBtn } from "../Component/buttons";
+import { Div } from "../Component/Container";
 import { Title } from "../Titles/titles";
-import styles from "./header.module.css";
-import { HeaderContainer } from "./headerComponents";
+import { Container, HeaderContainer } from "./headerComponents";
 
-const Header = (props) => {
+const Header = ({ onLogout }) => {
   return (
     <HeaderContainer>
-      <Title>Scheduler</Title>
-      <TabBtn href="/calendar">Calendar</TabBtn>
-      <TabBtn href="/diary">Diary</TabBtn>
-      <BasicBtn onClick={props.onLogout}>Logout</BasicBtn>
+      <Container>
+        <TabBtn href="/calendar">Calendar</TabBtn>
+        <TabBtn href="/diary">Diary</TabBtn>
+        <RoundBtn onClick={onLogout}>Logout</RoundBtn>
+      </Container>
     </HeaderContainer>
   );
 };

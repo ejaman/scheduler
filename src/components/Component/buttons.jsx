@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const BasicBtn = styled.button`
   padding: 0.6rem;
   margin-top: 0.5rem;
@@ -6,7 +7,7 @@ export const BasicBtn = styled.button`
   color: white;
   border: thin;
   border-radius: 5px;
-  width: 90%;
+  width: ${(props) => props.wdith || "90%"};
   font-weight: 600;
   font-size: 1.1rem;
   border: 2px solid;
@@ -16,6 +17,20 @@ export const BasicBtn = styled.button`
     color: black;
   }
 `;
+export const RoundBtn = styled.button`
+  background-color: black;
+  color: white;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1rem;
+  border: none;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+`;
+
 // header
 export const TabBtn = styled.a`
   color: black;
@@ -23,4 +38,7 @@ export const TabBtn = styled.a`
   font-weight: bold;
   margin: 0.3em;
   text-decoration: none;
+  &:hover {
+    border-bottom: 1px solid;
+  }
 `;

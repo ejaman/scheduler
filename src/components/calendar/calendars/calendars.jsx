@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router";
 import Header from "../../header/header";
-
 import List from "../list/list";
 import Thismonth from "../thismonth/thismonth";
 import styles from "./calendars.module.css";
@@ -59,8 +58,8 @@ const Calendars = ({ authService, Repo }) => {
 
   return (
     <section className={styles.calenders}>
-      <Header onLogout={onLogout} />
-      {/* <AddForm onAdd={addSchdule} /> */}
+      {/* <Header onLogout={onLogout} /> */}
+
       <div className={styles.container}>
         <Thismonth
           schedules={schedules}

@@ -7,7 +7,7 @@ export const BasicBtn = styled.button`
   color: white;
   border: thin;
   border-radius: 5px;
-  width: ${(props) => props.wdith || "90%"};
+  width: ${(props) => props.width || "90%"};
   font-weight: 600;
   font-size: 1.1rem;
   border: 2px solid;
@@ -17,6 +17,19 @@ export const BasicBtn = styled.button`
     color: black;
   }
 `;
+
+export const TextBtn = styled.button`
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background: none;
+  width: ${(props) => props.width || "90%"};
+  font-weight: 600;
+  font-size: 1.1rem;
+  &:hover {
+    opacity: 0.6;
+  }
+`;
+
 export const RoundBtn = styled.button`
   background-color: black;
   color: white;

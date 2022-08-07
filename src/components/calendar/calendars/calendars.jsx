@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router";
-import Header from "../../header/header";
+import { ContentContainer } from "../../Component/Container";
 import List from "../list/list";
 import Thismonth from "../thismonth/thismonth";
 import styles from "./calendars.module.css";
@@ -11,10 +11,6 @@ const Calendars = ({ authService, Repo }) => {
   const [schedules, setSchedules] = useState([]);
   const [userId, setUserId] = useState(locationState && locationState.id); //check!
   const navigate = useNavigate();
-
-  const onLogout = () => {
-    authService.logout();
-  };
 
   // for login
   useEffect(() => {
@@ -57,18 +53,14 @@ const Calendars = ({ authService, Repo }) => {
   };
 
   return (
-    <section className={styles.calenders}>
-      {/* <Header onLogout={onLogout} /> */}
-
-      <div className={styles.container}>
-        <Thismonth
-          schedules={schedules}
-          onAdd={addSchdule}
-          onDelete={deleteSchedule}
-        />
-        <List schedules={schedules} />
-      </div>
-    </section>
+    <ContentContainer>
+      <Thismonth
+        schedules={schedules}
+        onAdd={addSchdule}
+        onDelete={deleteSchedule}
+      />
+      <List schedules={schedules} />
+    </ContentContainer>
   );
 };
 

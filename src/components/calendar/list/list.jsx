@@ -3,6 +3,7 @@ import styles from "./list.module.css";
 import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import interactionPlugin from "@fullcalendar/interaction"; //
 import listPlugin from "@fullcalendar/list";
+import { ScheduleForm } from "../../Component/Container";
 
 const List = ({ schedules, onAdd }) => {
   const handleDateClick = (event) => {
@@ -18,19 +19,18 @@ const List = ({ schedules, onAdd }) => {
   };
 
   return (
-    <form className={styles.form}>
-      <h1>This week</h1>
-      <div className={styles.list}>
+    <ScheduleForm>
+      <div>
         <FullCalendar
           plugins={[listPlugin, interactionPlugin]}
           initialView="listWeek"
           events={schedules}
           dateClick={handleDateClick}
           eventClick={handleEventClick}
-          height="90%"
+          height="75%"
         />
       </div>
-    </form>
+    </ScheduleForm>
   );
 };
 

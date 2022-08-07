@@ -1,7 +1,6 @@
 import styles from "./diary.module.css";
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
-
 import AddDiary from "../addDiary/addDiary";
 import AddedDiary from "../addedDiary/addedDiary";
 // import MonthBtn from "../monthBtn/monthBtn";
@@ -62,25 +61,21 @@ const Diary = ({ authService, FileInput, Repo }) => {
 
   return (
     <section className={styles.diary}>
-      {/* <Header onLogout={onLogout} /> */}
       <button className={styles.openBtn} onClick={onOpen}>
         {open ? "close" : "add diary"}
       </button>
-      <div className={`${open ? styles.addDiary : styles.addClosed}`}>
-        <AddDiary
-          diaries={diaries}
-          onAdd={addAndUpdateFeed}
-          FileInput={FileInput}
-        />
-      </div>
-      <div className={`${open ? styles.addedClosed : styles.addedDiary}`}>
-        {/* <MonthBtn /> */}
-        <AddedDiary
-          diaries={diaries}
-          onDelete={deleteFeed}
-          onUpdate={addAndUpdateFeed}
-        />
-      </div>
+
+      <AddDiary
+        diaries={diaries}
+        onAdd={addAndUpdateFeed}
+        FileInput={FileInput}
+      />
+
+      <AddedDiary
+        diaries={diaries}
+        onDelete={deleteFeed}
+        onUpdate={addAndUpdateFeed}
+      />
     </section>
   );
 };

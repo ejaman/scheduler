@@ -23,7 +23,8 @@ export const RoundBtn = styled.button`
   border-radius: 30px;
   font-size: 1rem;
   font-weight: bold;
-  padding: 1rem;
+  padding: 0.5rem;
+  margin-left: auto;
   border: none;
   &:hover {
     background-color: white;

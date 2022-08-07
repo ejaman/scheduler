@@ -1,12 +1,5 @@
 @value makerBlueGrey,makerSnow,makerNavy,makerWhite from '../../../common/colors.css';
 .form {
-  flex-basis: 40%;
-  text-align: center;
-  align-items: center;
-  margin: 0 1.5em;
-  background-color: #e9eaec;
-  border-radius: 10px;
-  padding: 1em;
 }
 .list {
   background-color: white;
@@ -15,13 +8,4 @@
   padding: 1em;
   height: 90%;
   font-size: 0.8em;
-}
-@media screen and (max-width: 55rem) {
-  .form {
-    width: 80%;
-    height: 100vh;
-  }
-  .list {
-    height: 85vh;
-  }
 }

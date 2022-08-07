@@ -12,7 +12,7 @@ function App({ authService, FileInput, Repo }) {
         <Routes>
           <Route path="/" exact element={<Login authService={authService} />} />
           <Route path="/login" element={<Login authService={authService} />} />
-          <Route element={<Layout />}>
+          <Route element={<Layout authService={authService} />}>
             <Route
               path="/calendar"
               element={<Calendars authService={authService} Repo={Repo} />}

@@ -6,19 +6,16 @@ import Footer from "./footer/Footer";
 
 const Wrapper = styled.div`
   width: 100%;
-  /* display: flex;
-  flex-direction: column;
-  height: 100vh; */
+  height: 100vh;
 `;
 
-const ContentWrapper = styled.div`
-  /* flex: 1; */
-`;
-
-export default function Layout() {
+export default function Layout({ authService }) {
+  const onLogout = () => {
+    authService.logout();
+  };
   return (
     <Wrapper>
-      <Header searchBox={false} />
+      <Header searchBox={false} onLogout={onLogout} />
       <Outlet />
       <Footer />
     </Wrapper>

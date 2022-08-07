@@ -1,20 +1,14 @@
 import React from "react";
-import styles from "./header.module.css";
+import { RoundBtn, TabBtn } from "../Component/buttons";
+import { HeaderContainer } from "./headerComponents";
 
-const Header = (props) => {
+const Header = ({ onLogout }) => {
   return (
-    <header className={styles.container}>
-      <h1 className={styles.title}>Scheduler </h1>{" "}
-      <a className={styles.link} href="/calendar">
-        Calendar
-      </a>
-      <a className={styles.link} href="/diary">
-        Diary
-      </a>
-      <button className={styles.loginBtn} onClick={props.onLogout}>
-        Logout
-      </button>
-    </header>
+    <HeaderContainer>
+      <TabBtn href="/calendar">Calendar</TabBtn>
+      <TabBtn href="/diary">Diary</TabBtn>
+      <RoundBtn onClick={onLogout}>Logout</RoundBtn>
+    </HeaderContainer>
   );
 };
 

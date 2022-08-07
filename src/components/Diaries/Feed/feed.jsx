@@ -29,13 +29,6 @@ const Feed = ({ feed, onDelete, onUpdate, d }) => {
       <img className={styles.img} src={url} alt="profile photo" />
       <div className={styles.container}>
         <p className={styles.date}>{date}</p>
-        <input
-          className={styles.title}
-          type="text"
-          name="title"
-          value={title}
-          onChange={onChange}
-        ></input>
         <textarea
           className={styles.content}
           name="content"

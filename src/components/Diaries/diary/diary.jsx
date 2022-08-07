@@ -1,5 +1,5 @@
 import styles from "./diary.module.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useLocation, useNavigate } from "react-router";
 import AddDiary from "../addDiary/addDiary";
 import AddedDiary from "../addedDiary/addedDiary";
@@ -10,12 +10,10 @@ const Diary = ({ authService, FileInput, Repo }) => {
   const locationState = location?.state;
   const [diaries, setDiaries] = useState({});
   const [userId, setUserId] = useState(locationState && locationState.id); //check!
-  const [open, setOpend] = useState(false);
-  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+  const outSection = useRef();
 
-  const onLogout = () => {
-    authService.logout();
-  };
+  const navigate = useNavigate();
 
   // for login
   useEffect(() => {
@@ -54,28 +52,37 @@ const Diary = ({ authService, FileInput, Repo }) => {
     });
     Repo.removeDiary(userId, feed);
   };
-  const onOpen = (e) => {
-    // e.preventDefault();
-    setOpend(!open);
+
+  const onAddClick = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
   };
 
   return (
     <section className={styles.diary}>
-      <button className={styles.openBtn} onClick={onOpen}>
-        {open ? "close" : "add diary"}
-      </button>
-
-      <AddDiary
-        diaries={diaries}
-        onAdd={addAndUpdateFeed}
-        FileInput={FileInput}
-      />
-
-      <AddedDiary
-        diaries={diaries}
-        onDelete={deleteFeed}
-        onUpdate={addAndUpdateFeed}
-      />
+      <button onClick={onAddClick}>add</button>
+      {isOpen && (
+        <div>
+          <AddDiary
+            diaries={diaries}
+            onAdd={addAndUpdateFeed}
+            FileInput={FileInput}
+            isOpen={isOpen}
+            closeModal={closeModal}
+          />
+        </div>
+      )}
+      <div ref={outSection}>
+        <AddedDiary
+          onClick={(e) => {}}
+          diaries={diaries}
+          onDelete={deleteFeed}
+          onUpdate={addAndUpdateFeed}
+        />
+      </div>
     </section>
   );
 };

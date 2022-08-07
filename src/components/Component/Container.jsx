@@ -10,11 +10,9 @@ export const ContentContainer = styled.section`
   margin: 1em 0;
   text-align: center;
   @media screen and (max-width: 55rem) {
-    .container {
-      flex-direction: column;
-      align-items: center;
-      height: 135vh;
-    }
+    flex-direction: column;
+    align-items: center;
+    height: 135vh;
   }
 `;
 
@@ -23,11 +21,9 @@ export const CalendarForm = styled.form`
   margin: 0 2em;
   padding: 1.5em;
   @media screen and (max-width: 55rem) {
-    .form {
-      width: 80%;
-      height: 100vh;
-      margin-bottom: 2em;
-    }
+    width: 80%;
+    height: 100vh;
+    margin-bottom: 2em;
   }
 `;
 
@@ -38,12 +34,7 @@ export const ScheduleForm = styled.form`
 
   // 사용법 찾아보기
   @media screen and (max-width: 55rem) {
-    .form {
-      width: 80%;
-      height: 100vh;
-    }
-    .list {
-      height: 85vh;
-    }
+    width: 80%;
+    height: 100vh;
   }
 `;

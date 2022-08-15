@@ -9,7 +9,17 @@ import styled from "styled-components";
 const Diary = ({ authService, FileInput, Repo }) => {
   const location = useLocation(); // check
   const locationState = location?.state;
-  const [diaries, setDiaries] = useState({});
+  const [diaries, setDiaries] = useState([
+    {
+      title: "How to use?",
+      date: "start day",
+      content: `주요 기능
+     - 포토 다이어리를 작성한다
+      : 오늘의 사진과 함께 간단한 일기로 하루를 기록
+    - 달력으로 일정을 관리한다
+      : 주요 일정을 달력에 표시하고 한 주의 이벤트를 확인`,
+    },
+  ]);
   const [userId, setUserId] = useState(locationState && locationState.id); //check!
   const [isOpen, setIsOpen] = useState(false);
   const outSection = useRef();

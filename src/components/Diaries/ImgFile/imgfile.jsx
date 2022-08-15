@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { TextBtn } from "../../Component/buttons";
+import styled from "styled-components";
 
 const ImgFile = ({ imgUploader, onFileChange }) => {
   const [loading, setLoading] = useState(false);
@@ -18,8 +19,8 @@ const ImgFile = ({ imgUploader, onFileChange }) => {
   };
 
   return (
-    <div style={{ width: "49%", marginRight: "0.1rem" }}>
-      <input
+    <Section style={{ width: "49%", marginRight: "0.1rem" }}>
+      <Input
         ref={inputRef}
         type="file"
         accept="image/*"
@@ -32,8 +33,14 @@ const ImgFile = ({ imgUploader, onFileChange }) => {
         </TextBtn>
       )}
       {loading && <TextBtn width="100%">Loading...</TextBtn>}
-    </div>
+    </Section>
   );
 };
 
+const Section = styled.section`
+  display: inline;
+`;
+const Input = styled.input`
+  display: none;
+`;
 export default ImgFile;

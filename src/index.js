@@ -6,8 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import "@fortawesome/fontawesome-free/js/all.js";
 import AuthService from "./service/authService";
 import ImgUploader from "./service/imgUploader";
-import Imgfile from "./components/diaries/ImgFile/imgfile";
 import FeedRepository from "./service/feedRepository";
+import Imgfile from "./components/diaries/ImgFile/imgfile";
 
 const authService = new AuthService();
 const Repo = new FeedRepository();

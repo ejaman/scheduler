@@ -1,12 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router";
 import Feed from "../Feed/feed";
-import styles from "./addedDiary.module.css";
+import styled from "styled-components";
 
 const AddedDiary = ({ diaries, onDelete, onUpdate }) => {
   return (
-    <section className={styles.added}>
-      <ul className={styles.feeds}>
+    <Section>
+      <Feeds>
         {Object.keys(diaries).map((key) => (
           <Feed
             key={key}
@@ -16,9 +15,28 @@ const AddedDiary = ({ diaries, onDelete, onUpdate }) => {
             onUpdate={onUpdate}
           />
         ))}
-      </ul>
-    </section>
+      </Feeds>
+    </Section>
   );
 };
+
+export const Section = styled.section`
+  width: 100%;
+  padding-left: 3rem;
+
+  @media screen and (max-width: 62rem) {
+    margin-top: 5em;
+    width: 60%;
+  }
+`;
+
+export const Feeds = styled.ul`
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+
+  &:hover {
+  }
+`;
 
 export default AddedDiary;

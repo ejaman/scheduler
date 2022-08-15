@@ -5,10 +5,11 @@ import ModalFrame from "../diary/modalFrame";
 import {
   AddForm,
   BtnDiv,
+  Input,
   FlexDiv,
   Img,
-  ModalStyle,
   TextArea,
+  Today,
 } from "../diary/modalStyle";
 // import styles from "./addDiary.module.css";
 
@@ -16,7 +17,7 @@ const AddDiary = ({ onAdd, FileInput, isOpen, closeModal }) => {
   const formRef = useRef();
   const contentRef = useRef();
   const [file, setFile] = useState({ file: null, imgURL: null });
-
+  const titleRef = useRef();
   const now = new Date();
   const year = now.getFullYear();
   const month = now.getMonth() + 1;
@@ -34,6 +35,7 @@ const AddDiary = ({ onAdd, FileInput, isOpen, closeModal }) => {
     event.preventDefault();
     const feed = {
       id: Date.now(), //uuid
+      title: titleRef.current.value || "",
       date: today,
       month: month, // month 별로 일기보는데 필요
       content: contentRef.current.value || "",
@@ -52,7 +54,8 @@ const AddDiary = ({ onAdd, FileInput, isOpen, closeModal }) => {
       <AddForm ref={formRef}>
         <Img src={url} alt="img"></Img>
         <FlexDiv>
-          <p>{today}</p>
+          <Input ref={titleRef} type="text" name="title" placeholder="Title" />
+          <Today>{today}</Today>
           <TextArea ref={contentRef} name="content"></TextArea>
         </FlexDiv>
         <BtnDiv>

@@ -7,7 +7,7 @@ import "@fortawesome/fontawesome-free/js/all.js";
 import AuthService from "./service/authService";
 import ImgUploader from "./service/imgUploader";
 import FeedRepository from "./service/feedRepository";
-import Imgfile from "./components/diaries/ImgFile/imgfile";
+import Imgfile from "./components/diaries/ImgFile/Imgfile";
 
 const authService = new AuthService();
 const Repo = new FeedRepository();

@@ -17,7 +17,7 @@ export default function Layout({ authService }) {
     <Wrapper>
       <Header searchBox={false} onLogout={onLogout} />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </Wrapper>
   );
 }

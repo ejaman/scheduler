@@ -1,8 +1,9 @@
-import styles from "./diary.module.css";
 import React, { useEffect, useState, useRef } from "react";
 import { useLocation, useNavigate } from "react-router";
 import AddDiary from "../addDiary/addDiary";
 import AddedDiary from "../addedDiary/addedDiary";
+import { RoundBtn } from "../../Component/buttons";
+import styled from "styled-components";
 // import MonthBtn from "../monthBtn/monthBtn";
 
 const Diary = ({ authService, FileInput, Repo }) => {
@@ -62,8 +63,8 @@ const Diary = ({ authService, FileInput, Repo }) => {
   };
 
   return (
-    <section className={styles.diary}>
-      <button onClick={onAddClick}>add</button>
+    <Section>
+      <AddButton onClick={onAddClick}>+</AddButton>
       {isOpen && (
         <div>
           <AddDiary
@@ -83,8 +84,15 @@ const Diary = ({ authService, FileInput, Repo }) => {
           onUpdate={addAndUpdateFeed}
         />
       </div>
-    </section>
+    </Section>
   );
 };
 
+const Section = styled.section`
+  padding: 2rem;
+`;
+
+const AddButton = styled(RoundBtn)`
+  width: 3rem;
+`;
 export default Diary;

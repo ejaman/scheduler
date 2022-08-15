@@ -14,7 +14,7 @@ const Login = ({ authService }) => {
   const inputRef = useRef();
 
   const goCalendar = (userId) => {
-    navigate("/calendar", { state: { id: userId } });
+    navigate("/diary", { state: { id: userId } });
   };
 
   const onLogin = (event) => {

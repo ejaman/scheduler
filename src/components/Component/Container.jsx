@@ -31,7 +31,6 @@ export const ScheduleForm = styled.form`
   flex-basis: 35%;
   margin: 1rem 0rem;
   padding: 1rem 3rem 0rem 0rem;
-
   // 사용법 찾아보기
   @media screen and (max-width: 55rem) {
     width: 80%;

@@ -6,23 +6,22 @@ import interactionPlugin from "@fullcalendar/interaction"; //
 import { CalendarForm, Div } from "../../Component/Container";
 
 const Thismonth = ({ schedules, onAdd, onDelete }) => {
-  // const [color, setColor] = useState();
   const handleDateSelect = (event) => {
-    // TODO: modal로 따로 빼기
-    let title = prompt("Please enter a title for your event");
-    let color = prompt("Event color?(choose 1,2,3,4,5 or type what you want)");
-    event.view.calendar.unselect(); // clear date selection
-    const defaultColor = EventColor(color);
-    const schedule = {
-      id: Date.now(),
-      title,
-      start: event.startStr,
-      end: event.endStr,
-      backgroundColor: defaultColor,
-      borderColor: defaultColor,
-    };
-
+    const title = prompt("이벤트 이름을 입력해주세요 👍");
     if (title) {
+      const color = prompt(
+        "이벤트 생상을 입력해주세요(1~7: 무지개 색생, 0: black, 그 외 입력시 기본색상)"
+      );
+      event.view.calendar.unselect(); // clear date selection
+      const defaultColor = EventColor(color);
+      const schedule = {
+        id: Date.now(),
+        title,
+        start: event.startStr,
+        end: event.endStr,
+        backgroundColor: defaultColor,
+        borderColor: defaultColor,
+      };
       onAdd(schedule);
     }
   };
@@ -41,6 +40,7 @@ const Thismonth = ({ schedules, onAdd, onDelete }) => {
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
           initialView="dayGridMonth"
           editable={true}
+          droppable={true}
           selectable={true}
           select={handleDateSelect}
           eventClick={handleEventClick}
@@ -53,16 +53,22 @@ const Thismonth = ({ schedules, onAdd, onDelete }) => {
 
   function EventColor(color) {
     switch (color) {
+      case "0":
+        return "#686868";
       case "1":
-        return "#535665";
+        return "#d5a0a0";
       case "2":
-        return "#707483";
+        return "#d5bca0";
       case "3":
-        return "#8F93A3";
+        return "#d5caa0";
       case "4":
-        return "#666E8E";
+        return "#b3d5a0";
       case "5":
-        return "#A2AACE";
+        return "#a0c8d5";
+      case "6":
+        return "#a0b2d5";
+      case "7":
+        return "#aba0d5";
       default:
         return color;
     }

@@ -4,8 +4,11 @@ import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import interactionPlugin from "@fullcalendar/interaction"; //
 import listPlugin from "@fullcalendar/list";
 import { ScheduleForm } from "../../Component/Container";
+import { useEffect } from "react/cjs/react.production.min";
 
 const List = ({ schedules, onAdd }) => {
+  const obj = Object.assign({}, schedules);
+  console.log(obj);
   const handleDateClick = (event) => {
     console.log(event);
   };
@@ -24,10 +27,12 @@ const List = ({ schedules, onAdd }) => {
         <FullCalendar
           plugins={[listPlugin, interactionPlugin]}
           initialView="listWeek"
-          events={schedules}
-          dateClick={handleDateClick}
+          editable={true}
+          selectable={true}
           eventClick={handleEventClick}
-          height="75%"
+          events={schedules}
+          height={650}
+          nowIndicator
         />
       </div>
     </ScheduleForm>

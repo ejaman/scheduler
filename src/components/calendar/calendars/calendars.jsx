@@ -3,7 +3,6 @@ import { useLocation, useNavigate } from "react-router";
 import { ContentContainer } from "../../Component/Container";
 import List from "../list/list";
 import Thismonth from "../thismonth/thismonth";
-import styles from "./calendars.module.css";
 
 const Calendars = ({ authService, Repo }) => {
   const location = useLocation();
@@ -37,6 +36,7 @@ const Calendars = ({ authService, Repo }) => {
 
   // 실행됨
   const addSchdule = (schedule) => {
+    console.log(schedule);
     const added = [...schedules, schedule];
     setSchedules(added);
 
@@ -44,7 +44,6 @@ const Calendars = ({ authService, Repo }) => {
   };
 
   const deleteSchedule = (eventid) => {
-    console.log(eventid);
     const test = [...schedules];
     const result = test.filter((item) => item.id !== eventid);
     console.log(result);

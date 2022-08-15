@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { TextBtn } from "../../Component/buttons";
 
-const Imgfile = ({ imgUploader, onFileChange }) => {
+const ImgFile = ({ imgUploader, onFileChange }) => {
   const [loading, setLoading] = useState(false);
 
   const inputRef = useRef();
@@ -36,4 +36,4 @@ const Imgfile = ({ imgUploader, onFileChange }) => {
   );
 };
 
-export default Imgfile;
+export default ImgFile;

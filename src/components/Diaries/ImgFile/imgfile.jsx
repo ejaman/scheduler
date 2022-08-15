@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import { TextBtn } from "../../Component/buttons";
-import styles from "./imgfile.module.css";
 
 const Imgfile = ({ imgUploader, onFileChange }) => {
   const [loading, setLoading] = useState(false);
@@ -22,7 +21,6 @@ const Imgfile = ({ imgUploader, onFileChange }) => {
     <div style={{ width: "49%", marginRight: "0.1rem" }}>
       <input
         ref={inputRef}
-        className={styles.input}
         type="file"
         accept="image/*"
         name="file"
